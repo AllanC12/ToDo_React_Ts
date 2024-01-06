@@ -1,9 +1,7 @@
 
-interface Props {
-    
-}
 
-const TaskList = (props: Props) => {
+
+const TaskList = () => {
   return (
     <div>TaskList</div>
   )
