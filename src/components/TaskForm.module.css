@@ -1,0 +1,5 @@
+.input_txt, .input_number{
+    height: 35px;
+    width: 100%;
+    max-width: 400px;
+}
