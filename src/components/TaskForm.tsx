@@ -5,18 +5,29 @@ import {useState,ChangeEvent,FormEvent,useEffect} from 'react'
 import {ITask} from '../interfaces/Task'
 
 interface Props {
-    btnText: string
+    btnText: string,
+    taskList: ITask[],
+    setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>
+
 }
 
 
 
-const TaskForm = ({btnText}: Props) => {
+const TaskForm = ({btnText,taskList,setTaskList}: Props) => {
 
   const [id,setId] = useState<number>(0)
   const [title,setTitle] = useState<string>('')
   const [difficulty,setDifficulty] = useState<number>(0)
 
-  const addTaskHandler = () => {
+  const addTaskHandler = (e:FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const id = Math.floor(Math.random() * 10000)
+    const newTask = {
+      id,
+      title,
+      difficulty
+    }
 
   }
 
@@ -27,6 +38,8 @@ const TaskForm = ({btnText}: Props) => {
       setDifficulty(parseInt(e.target.value))
     }
   }
+
+
 
 
   return (
