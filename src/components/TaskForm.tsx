@@ -12,7 +12,6 @@ interface Props {
 }
 
 
-
 const TaskForm = ({btnText,taskList,setTaskList}: Props) => {
 
   const [id,setId] = useState<number>(0)
@@ -23,12 +22,16 @@ const TaskForm = ({btnText,taskList,setTaskList}: Props) => {
     e.preventDefault()
 
     const id = Math.floor(Math.random() * 10000)
-    const newTask = {
+    const newTask: ITask = {
       id,
       title,
       difficulty
     }
 
+    setTaskList!([...taskList,newTask])
+
+    setTitle("")
+    setDifficulty(0)
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -40,17 +43,15 @@ const TaskForm = ({btnText,taskList,setTaskList}: Props) => {
   }
 
 
-
-
   return (
     <form onSubmit={addTaskHandler}>
         <div className={styles.input_container}>
             <label htmlFor="title">Título:</label>
-            <input type="text" name="title" className={styles.input_txt} onChange={handleChange} placeholder="Título da sua tarefa" />
+            <input type="text" name="title" className={styles.input_txt} value={title} onChange={handleChange} placeholder="Título da sua tarefa" />
         </div>
         <div className={styles.input_container}>
             <label htmlFor="dificcult">Dificuldade:</label>
-            <input type="number" name="difficulty" className={styles.input_number} onChange={handleChange} placeholder="Dificuldade da tarefa"/>
+            <input type="number" name="difficulty" className={styles.input_number} value={difficulty} onChange={handleChange} placeholder="Dificuldade da tarefa"/>
         </div>
 
         <input type="submit" value={btnText} />
