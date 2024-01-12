@@ -11,7 +11,6 @@ interface Props {
 
 }
 
-
 const TaskForm = ({btnText,taskList,setTaskList}: Props) => {
 
   const [id,setId] = useState<number>(0)
