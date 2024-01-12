@@ -1,23 +1,27 @@
-import { ITask } from "../interfaces/Task"
+import { ITask } from "../interfaces/Task";
 
-import styles from "./TaskList.module.css"
+import styles from "./TaskList.module.css";
+import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
 
 interface Props {
-  taskList: ITask[]
+  taskList: ITask[];
 }
 
-const TaskList = ({taskList}: Props) => {
+const TaskList = ({ taskList }: Props) => {
   return (
-    <div className={styles.taskList}>
+    <>
       {taskList.length > 0 ? (
         <div>
-          {taskList.map(task => (
-            <div key={task.id}>
-              <h4>{task.title}</h4>
-              <p>Dificuldade: {task.difficulty}</p>
-              <div className={styles.icons}>
-                <i className="bi bi-pencil"></i>
-                <i className="bi bi-trash"></i>
+          {taskList.map((task) => (
+            <div key={task.id} className={styles.task}>
+              <div className={styles.details}>
+                <h5>{task.title}</h5>
+                <p>Dificuldade: {task.difficulty}</p>
+              </div>
+
+              <div className={styles.actions}>
+                <FaPencilAlt title="Editar tarefa"/>
+                <FaRegTrashAlt title="Excluir tarefa"/>
               </div>
             </div>
           ))}
@@ -25,8 +29,8 @@ const TaskList = ({taskList}: Props) => {
       ) : (
         <p>Nao ha tarefas cadastradas</p>
       )}
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default TaskList
+export default TaskList;

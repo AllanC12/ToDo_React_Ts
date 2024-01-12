@@ -21,7 +21,7 @@ function App() {
              <TaskForm btnText="Criar tarefa" taskList={taskList} setTaskList={setTaskList}/>
           </div>
           <div>
-             <h2>Suas tarefas</h2>
+             <h3><b>Suas tarefas:</b></h3>
              <TaskList taskList={taskList}/>
           </div>
         </main>
