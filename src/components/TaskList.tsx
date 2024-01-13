@@ -6,9 +6,10 @@ import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
 interface Props {
   taskList: ITask[];
   handleDelete(id: number): void
+  handleEdit(task: ITask): void
 }
 
-const TaskList = ({ taskList,handleDelete }: Props) => {
+const TaskList = ({ taskList,handleDelete,handleEdit}: Props) => {
   return (
     <>
       {taskList.length > 0 ? (
@@ -21,7 +22,7 @@ const TaskList = ({ taskList,handleDelete }: Props) => {
               </div>
 
               <div className={styles.actions}>
-                <FaPencilAlt title="Editar tarefa"/>
+                <FaPencilAlt title="Editar tarefa" onClick={() => handleEdit(task)}/>
                 <FaRegTrashAlt title="Excluir tarefa" onClick={() => {handleDelete(task.id)}}/>
               </div>
             </div>

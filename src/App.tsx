@@ -11,6 +11,7 @@ import { ITask } from "./interfaces/Task";
 
 function App() {
   const [taskList, setTaskList] = useState<ITask[]>([]);
+  const [taskToUpdate,setTaskToUpdate] = useState<ITask | null>(null)
   const deleteTask = (id: number) => {
     setTaskList(
       taskList.filter((task) => {
@@ -18,6 +19,20 @@ function App() {
       })
     );
   };
+
+  const hideOrShowModal = (display: boolean): void => {
+    const modal = document.querySelector("#modal")
+    if(display){
+      modal!.classList.remove("hide")
+    }else{
+      modal!.classList.add("hide")
+    }
+  }
+
+  const editTask = (task: ITask):void => {
+    hideOrShowModal(true)
+    setTaskToUpdate(task)
+  }
 
   return (
     <>
@@ -36,7 +51,7 @@ function App() {
           <h3>
             <b>Suas tarefas:</b>
           </h3>
-          <TaskList taskList={taskList} handleDelete={deleteTask} />
+          <TaskList taskList={taskList} handleDelete={deleteTask} handleEdit={editTask} />
         </div>
       </main>
       <Footer />
