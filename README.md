@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <h2>ToDoList - React + TS &#9989;</h2>
+  &#9679;
+  Este projeto tem a finalidade de auxiliar em tarefas simples do dia a dia à fim de manter
+  uma certa organização, mesmo em atividades simples.
+  
+ ##
+   <h2>Tecnologias utilizadas &#128640;<h2>
 
-Currently, two official plugins are available:
+  &#9679; ReactJS</br>
+  &#9679; Javascript </br>
+  &#9679; Typescript</br>
+  &#9679; CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <h2>Preview &#128064;</h2>
 
-## Expanding the ESLint configuration
+  <div allign="center">
+    <img src="https://github.com/AllanC12/ToDo_React_Ts/assets/112294367/dc0c0303-3055-4e83-9e2d-ecd30b3f7616"/>
+    <img src="https://github.com/AllanC12/ToDo_React_Ts/assets/112294367/84261faa-7e9a-4f47-ab9b-504301a44b0e" />
+  </div>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+ <h2>Como executar? &#8987;</h2>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ &#9679;
+ Certifique-se de ter instalado em seu computador o gerenciador de pacotes do NodeJs. Abra o VSCode ou a IDE que você utilizae e em seguida clone este repositório. Quando estiver com todos os arquivos ja em sua máquina, utilize o terminal para navegar até a pasta raiz do projeto. Feito isso, execute o comando "npm run dev" e cole o link gerado no terminal em seu navegador.
