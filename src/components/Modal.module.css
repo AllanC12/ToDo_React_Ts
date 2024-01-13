@@ -3,12 +3,12 @@
   height: 100%;
   background-color: #000;
   opacity: .3;
-  position: absolute;
+  position: fixed;
 }
 
 .modal{
   position: absolute;
-  top: 10%;
+  top: 25%;
   left: 0;
   right: 0; 
   margin: 0 auto;
